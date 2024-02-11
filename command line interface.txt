@@ -1,0 +1,38 @@
+command line interface
+------------------------------------------
+part-01 navigation
+------------------------------------------
+
+pwd ---> to path that standby
+ls  ---> list file
+clear --> clear all or (ctrl+l)
+cd Desktop ---> go to destop
+cd .. --->  to leave Desktop
+explorer . --> to open gui
+
+------------------------------------------
+Manage folder
+------------------------------------------
+
+mkdir ---> make directory(make folder)
+mkdir name1 name2 ---> make many folder in one time
+rm -r name ---> remove folder
+mv name name(rename) ---> to rename
+
+-----------------------------------------
+Manage file
+----------------------------------------
+
+touch name(index.txt) ---> create new file
+explorer . ---> to open file has been created
+touch index.html index.js style.css ---> to create multiiple file
+cp index.html index-copy.html ---> to copy file
+mv index.html home.html ---> to rename
+rm home.html ---> to delete file
+
+--------------------------------------------
+
+echo word---> terminal return word
+echo hello world > name file ---> terminal write world to name file
+cat name file ---> list word
+

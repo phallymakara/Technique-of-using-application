@@ -1,0 +1,28 @@
+---------------------------------------------------------------
+
+copy link in repository
+move project to file repository
+open git bash on repository that was move file in to
+
+----------------------------------------------------------------
+
+command using
+ls  ---> to see folder on that repository
+git status -->to make sure that file push to git hub ready or not
+git add . --> 
+git status --> to make sure file add or not
+git commit -m "reson"
+git$  git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+git commit -m "first commit"
+
+----------------------------------------------------------------
+
+to update code in IDE
+git status --> to know how many file has been change
+git add .
+git status --> to check
+git commit -m "update new file"
+git push
+
+---------------------------------------------------------------

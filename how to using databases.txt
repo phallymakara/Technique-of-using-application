@@ -1,0 +1,88 @@
+
+C:\Users\Phally Makara>cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: ******************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.0.35 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++----------------------------+
+| Database                   |
++----------------------------+
+| amitdb                     |
+| carbooking                 |
+| hospital_management_system |
+| information_schema         |
+| mysql                      |
+| oopb                       |
+| performance_schema         |
+| sys                        |
++----------------------------+
+8 rows in set (0.00 sec)
+
+mysql> use hospital_management_system;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table patients(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(255) NOT NULL,
+    -> age INT NOT NULL,
+    -> gender VARCHAR(10) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE DOCTORS(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> name VARCHAR(255) NOT NULL,
+    -> specialization VARCHAR(255) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE APPOINTMENTS(
+    -> id INT AUTO_INCREMENT PRIMARY KEY,
+    -> patient_id INT NOT NULL,
+    -> doctor_id INT NOT NULL,
+    -> appointment_date DATE NOT NULL,
+    -> FOREIGN KEY (patient_id) REFERENCES patients(id),
+    -> FOREIGN KEY (doctor_id) REFERENCES doctors(id)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show tables;
++--------------------------------------+
+| Tables_in_hospital_management_system |
++--------------------------------------+
+| appointments                         |
+| doctors                              |
+| patients                             |
++--------------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO DOCTORS(name, specialization) VALUES("phally makara", "ml engineer");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO DOCTORS(name, specialization) VALUES("mork mongkul", "deep learning engineer");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from doctors;
++----+---------------+------------------------+
+| id | name          | specialization         |
++----+---------------+------------------------+
+|  1 | phally makara | ml engineer            |
+|  2 | mork mongkul  | deep learning engineer |
++----+---------------+------------------------+
+2 rows in set (0.00 sec)
+
+mysql>
